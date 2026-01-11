@@ -122,7 +122,7 @@ PERSONNEL = [
 @app.route('/')
 def home():
     """Serve the main HTML page"""
-    return send_file('index.html')
+    return send_from_directory("frontend", "index.html")
 
 @app.route('/api/config')
 def get_config():
