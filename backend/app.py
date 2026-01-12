@@ -1,25 +1,27 @@
-from flask import Flask, send_file, jsonify, request, send_from_directory
+from flask import Flask, send_file, jsonify, request
+from flask_cors import CORS
 import os
-import json
 import io
 import qrcode
 from datetime import datetime
 
-app = Flask(__name__, static_folder='.', static_url_path='')
+app = Flask(__name__)
+CORS(app)
+
 
 # Configuration from your index.html
-CONFIG = {
-    'firebase': {
-        'apiKey': "AIzaSyAvdVw_yOQtxvSd9MTU_hRz1AD6RDCaQ0A",
-        'authDomain': "navigator-4a29d.firebaseapp.com",
-        'projectId': "navigator-4a29d",
-        'storageBucket': "navigator-4a29d.firebasestorage.app",
-        'messagingSenderId': "670551267892",
-        'appId': "1:670551267892:web:3c7f7a66c53f262adcc861"
-    },
-    'admin_email': "riddhipdas@gmail.com",
-    'map_key': "1DAJJ44xYcqv8JcwhP0L"
-}
+# CONFIG = {
+#     'firebase': {
+#         'apiKey': "AIzaSyAvdVw_yOQtxvSd9MTU_hRz1AD6RDCaQ0A",
+#         'authDomain': "navigator-4a29d.firebaseapp.com",
+#         'projectId': "navigator-4a29d",
+#         'storageBucket': "navigator-4a29d.firebasestorage.app",
+#         'messagingSenderId': "670551267892",
+#         'appId': "1:670551267892:web:3c7f7a66c53f262adcc861"
+#     },
+#     'admin_email': "riddhipdas@gmail.com",
+#     'map_key': "1DAJJ44xYcqv8JcwhP0L"
+# }
 
 # Preloaded places data from your index.html
 PRELOADED_PLACES = [
@@ -119,15 +121,15 @@ PERSONNEL = [
     }
 ]
 
-@app.route('/')
-def home():
-    """Serve the main HTML page"""
-    return send_from_directory("frontend", "index.html")
+# @app.route('/')
+# def home():
+#     """Serve the main HTML page"""
+#     return send_from_directory("frontend", "index.html")
 
-@app.route('/api/config')
-def get_config():
-    """Return Firebase configuration"""
-    return jsonify(CONFIG)
+# @app.route('/api/config')
+# def get_config():
+#     """Return Firebase configuration"""
+#     return jsonify(CONFIG)
 
 @app.route('/api/places')
 def get_places():
@@ -209,13 +211,13 @@ def health():
         'version': '1.0.0'
     })
 
-@app.route('/<path:filename>')
-def serve_static(filename):
-    """Serve static files"""
-    if os.path.exists(filename):
-        return send_file(filename)
-    else:
-        return jsonify({'error': 'File not found'}), 404
+# @app.route('/<path:filename>')
+# def serve_static(filename):
+#     """Serve static files"""
+#     if os.path.exists(filename):
+#         return send_file(filename)
+#     else:
+#         return jsonify({'error': 'File not found'}), 404
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
@@ -223,7 +225,7 @@ if __name__ == '__main__':
     print(f"Directory: {os.getcwd()}")
     print(f"Server: http://localhost:{port}")
     print(f"API Endpoints:")
-    print(f"   GET  /api/config     - Get Firebase configuration")
+    # print(f"   GET  /api/config     - Get Firebase configuration")
     print(f"   GET  /api/places     - Get all places")
     print(f"   GET  /api/personnel  - Get all personnel")
     print(f"   GET  /api/search?q=  - Search places/personnel")
