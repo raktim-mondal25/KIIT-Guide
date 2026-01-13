@@ -71,33 +71,30 @@ PRELOADED_PLACES = [
 PERSONNEL = [
     {
         "title": "Director General",
-        "name": "Prof. Sasmita Samanta",
-        "office": "Campus 3, Administrative Block",
-        "room": "DG Office, 3rd Floor",
-        "campus": "Campus 3",
+        "name": "Prof.(Dr.) Biswajit Sahoo",
+        "room": "C-001",
+        "campus": "Campus 25",
         "phone": "0674-272-7777",
         "lat": 20.3555,
         "lng": 85.8188
     },
     {
-        "title": "Dean - School of Computer Engineering",
-        "name": "Prof. Amiya Kumar Rath",
-        "office": "Campus 3",
-        "room": "Room 301, CS Building",
-        "campus": "Campus 3",
+        "title": "Dean CSE - School of Computer Engineering",
+        "name": "Prof. (Dr.) Bhabani Shankar Prasad Mishra",
+        "room": "C-201",
+        "campus": "Campus 25",
         "phone": "0674-272-8888",
         "lat": 20.3555,
         "lng": 85.8188
     },
     {
-        "title": "Dean - Student Welfare",
-        "name": "Prof. Jnyana Ranjan Mohanty",
-        "office": "Campus 1, Student Activity Center",
-        "room": "DSW Office, 2nd Floor",
-        "campus": "Campus 1",
-        "phone": "0674-272-9999",
-        "lat": 20.354055,
-        "lng": 85.816373
+        "title": "Dean IT - School of Computer Engineering",
+        "name": "Dr. Arup Abhinna Acharya",
+        "room": "C-101",
+        "campus": "Campus 25",
+        "phone": "9861058079",
+        "lat": 20.3555,
+        "lng": 85.8188
     },
     {
         "title": "Registrar",
@@ -110,12 +107,11 @@ PERSONNEL = [
         "lng": 85.8188
     },
     {
-        "title": "Dean - School of Management",
-        "name": "Prof. Biswajit Satpathy",
-        "office": "KIIT School of Management",
-        "room": "Dean Office, KSOM Building",
-        "campus": "Campus 7",
-        "phone": "0674-272-5555",
+        "title": "Associate Dean - Training and Placement",
+        "name": "Dr. Kumar Devadutta",
+        "room": "C-303",
+        "campus": "Campus 303",
+        "phone": "9437072128",
         "lat": 20.349987,
         "lng": 85.820746
     }
