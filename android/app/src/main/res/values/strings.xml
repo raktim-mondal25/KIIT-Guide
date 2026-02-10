@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">KIIT Guide</string>
+    <string name="title_activity_main">KIIT Guide</string>
+    <string name="package_name">com.kiit.guide</string>
+    <string name="custom_url_scheme">com.kiit.guide</string>
+</resources>

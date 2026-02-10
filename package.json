@@ -1,0 +1,10 @@
+{
+    "name": "kiit-connect",
+    "version": "1.0.0",
+    "private": true,
+    "dependencies": {
+        "@capacitor/android": "^8.0.1",
+        "@capacitor/cli": "^8.0.1",
+        "@capacitor/core": "^8.0.1"
+    }
+}
