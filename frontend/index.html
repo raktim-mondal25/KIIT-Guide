@@ -2909,13 +2909,6 @@
             initMap();
             await loadPlacesFromBackend(); // 🔥 WAIT
             initChatbot();
-            // 🔥 FIX DESKTOP HALF MAP
-            requestAnimationFrame(() => {
-                setTimeout(() => {
-                    if (map) map.invalidateSize(true);
-                }, 350);
-            });
-
         }
 
 
