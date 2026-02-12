@@ -2795,6 +2795,7 @@
 
                 // 🔥 MERGE backend data into preload
                 if (Array.isArray(data) && data.length > 0) {
+                    preload.length = 0;
                     preload.push(...data);
                 }
 
