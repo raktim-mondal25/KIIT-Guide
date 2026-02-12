@@ -228,10 +228,9 @@
         }
         
         .panel-body {
-            flex: 1;
-            min-height: 0;
+            height: 100%;
+            overflow: visible;
             position: relative;
-            display: flex;
         }
         
         #map {
@@ -1585,7 +1584,6 @@
                     setTimeout(() => map.invalidateSize(), 200);
                 }
             });
-
 
         }
 
