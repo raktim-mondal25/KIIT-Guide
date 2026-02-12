@@ -60,9 +60,10 @@
         }
         
         .app {
-            display: grid;
-            grid-template-rows: auto 1fr;
+            display: flex;
+            flex-direction: column;
             height: 100vh;
+            min-height: 0;
         }
         
         .nav {
@@ -207,7 +208,8 @@
             grid-template-columns: 320px 1fr;
             gap: 16px;
             padding: 16px;
-            height: calc(100vh - 64px);
+            flex: 1;
+            min-height: 0;
         }
         
         .panel {
