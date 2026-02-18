@@ -1,8 +1,8 @@
 {
-    "appId": "com.kiit.guide",
-    "appName": "KIIT Guide",
-    "webDir": "frontend",
-    "server": {
-        "androidScheme": "https"
-    }
+  "appId": "com.kiit.guide",
+  "appName": "KIIT Guide",
+  "webDir": "frontend",
+  "server": {
+    "androidScheme": "https"
+  }
 }
