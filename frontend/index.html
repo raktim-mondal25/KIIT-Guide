@@ -1453,7 +1453,7 @@
 
         const GEOFENCE = {
             center: [20.356873000543768, 85.82012030142747], // latitude, longitude
-            radius: 100 // meters
+            radius: 250 // meters
         };
 
         let geofenceCircle = null;
@@ -1508,8 +1508,8 @@
             currentLayer.addTo(map);
 
             // ✅ Start watching location ONLY after map exists
-            geofenceCircle = L.circle([20.35380253557167, 85.81989100774194], {
-                radius: 1400,
+            geofenceCircle = L.circle([20.356873000543768, 85.82012030142747], {
+                radius: 250,
                 color: "#ff5722",
                 weight: 2,
                 fillColor: "#ff5722",
@@ -2915,91 +2915,7 @@
         document.addEventListener("DOMContentLoaded", startApp);
     </script>
 
-    <!-- Notifications -->
-    <script>
-        let alreadyInside = false;
 
-        function distanceInMeters(lat1, lon1, lat2, lon2) {
-            const R = 6371000;
-            const dLat = (lat2 - lat1) * Math.PI / 180;
-            const dLon = (lon2 - lon1) * Math.PI / 180;
-
-            const a =
-                Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-                Math.cos(lat1 * Math.PI / 180) *
-                Math.cos(lat2 * Math.PI / 180) *
-                Math.sin(dLon / 2) * Math.sin(dLon / 2);
-
-            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-            return R * c;
-        }
-
-        let firstLaunch = localStorage.getItem("kiit_first_launch");
-
-        if (!firstLaunch) {
-            localStorage.setItem("kiit_first_launch", "done");
-
-            setTimeout(async() => {
-                const LocalNotifications = window.Capacitor.Plugins.LocalNotifications;
-
-                await LocalNotifications.schedule({
-                    notifications: [{
-                        title: "KIITNav Installed 🎉",
-                        body: "Welcome! You can now explore KIIT campus and find locations instantly.",
-                        id: 5
-                    }]
-                });
-            }, 8000);
-        }
-
-
-        async function checkCampus() {
-
-            const Geolocation = window.Capacitor.Plugins.Geolocation;
-            const LocalNotifications = window.Capacitor.Plugins.LocalNotifications;
-
-            try {
-
-                const pos = await Geolocation.getCurrentPosition();
-
-                const userLat = pos.coords.latitude;
-                const userLng = pos.coords.longitude;
-
-                // KIIT center
-                const kiitLat = 20.3536;
-                const kiitLng = 85.8187;
-
-                const dist = distanceInMeters(userLat, userLng, kiitLat, kiitLng);
-
-                if (dist < 600 && !alreadyInside) {
-
-                    alreadyInside = true;
-
-                    await LocalNotifications.schedule({
-                        notifications: [{
-                            title: "Welcome to KIIT 🎓",
-                            body: "You have entered KIIT campus. Tap to open KIITNav!",
-                            id: 2
-                        }]
-                    });
-
-                }
-
-                if (dist > 700) {
-                    alreadyInside = false;
-                }
-
-            } catch (e) {
-                console.log("Location error", e);
-            }
-        }
-
-        // check every 2 minutes
-        setInterval(checkCampus, 120000);
-
-        // first check after app opens
-        setTimeout(checkCampus, 5000);
-    </script>
 
 </body>
 
