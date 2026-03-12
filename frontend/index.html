@@ -1452,8 +1452,8 @@
 
 
         const GEOFENCE = {
-            center: [20.356873000543768, 85.82012030142747], // latitude, longitude
-            radius: 250 // meters
+            center: [20.35380253557167, 85.81989100774194], // latitude, longitude
+            radius: 1400 // meters
         };
 
         let geofenceCircle = null;
@@ -1508,8 +1508,8 @@
             currentLayer.addTo(map);
 
             // ✅ Start watching location ONLY after map exists
-            geofenceCircle = L.circle([20.356873000543768, 85.82012030142747], {
-                radius: 250,
+            geofenceCircle = L.circle([20.35380253557167, 85.81989100774194], {
+                radius: 1400,
                 color: "#ff5722",
                 weight: 2,
                 fillColor: "#ff5722",

@@ -2,9 +2,9 @@ import { Geolocation } from '@capacitor/geolocation';
 import { LocalNotifications } from '@capacitor/local-notifications';
 
 const KIIT = {
-    lat: 20.356873000543768,
-    lng: 85.82012030142747,
-    radius: 250
+    lat: 20.35380253557167,
+    lng: 85.81989100774194,
+    radius: 1400
 };
 
 let inside = null;
